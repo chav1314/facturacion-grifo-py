@@ -1,0 +1,96 @@
+===========================
+PRUEBAS DE FUNCIONALIDAD
+Sistema de Facturación para Grifos - Python
+===========================
+
+CASO 1: DNI válido con galones permitidos
+------------------------------------------
+Entrada:
+- Documento: 12345678
+- Galones: 80
+
+Resultado esperado:
+Venta registrada correctamente: Boleta por 80 galones.
+
+----------------------
+
+CASO 2: RUC válido con galones permitidos
+------------------------------------------
+Entrada:
+- Documento: 20481234567
+- Galones: 400
+
+Resultado esperado:
+Venta registrada correctamente: Factura por 400 galones.
+
+----------------------
+
+CASO 3: Documento inválido (longitud incorrecta)
+------------------------------------------------
+Entrada:
+- Documento: 12345
+
+Resultado esperado:
+Documento inválido. Debe tener 8 (DNI) u 11 (RUC) dígitos.
+
+----------------------
+
+CASO 4: Límite de galones excedido para Boleta
+----------------------------------------------
+Entrada:
+- Documento: 12345678
+- Galones: 150
+
+Resultado esperado:
+Límite excedido para Boleta. Máximo permitido: 100 galones.
+
+----------------------
+
+CASO 5: Límite de galones excedido para Factura
+-----------------------------------------------
+Entrada:
+- Documento: 20481234567
+- Galones: 600
+
+Resultado esperado:
+Límite excedido para Factura. Máximo permitido: 500 galones.
+
+----------------------
+
+CASO 6: Documento repetido más de 3 veces
+-----------------------------------------
+Entradas consecutivas:
+- Documento: 12345678
+- Galones: 50
+(3 veces exitosas)
+Luego, cuarta entrada con:
+- Documento: 12345678
+- Galones: 50
+
+Resultado esperado:
+Límite diario alcanzado para este documento.
+
+----------------------
+
+CASO 7: Entrada no numérica en galones
+--------------------------------------
+Entrada:
+- Documento: 20481234567
+- Galones: "abc"
+
+Resultado esperado:
+Entrada inválida. Ingrese un número válido.
+
+----------------------
+
+CASO 8: Salir del sistema
+--------------------------
+Entrada:
+- Documento: salir
+
+Resultado esperado:
+Programa Terminado
+
+===========================
+Fin de pruebas
+===========================
